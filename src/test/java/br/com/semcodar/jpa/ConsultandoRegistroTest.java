@@ -1,40 +1,12 @@
 package br.com.semcodar.jpa;
 
 import br.com.semcodar.jpa.model.Produto;
-import org.junit.*;
+import org.junit.Test;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-
-import static javax.persistence.Persistence.createEntityManagerFactory;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class ConsultandoRegistroTest {
-
-    private static EntityManagerFactory factory;
-
-    private  EntityManager manager;
-
-    @BeforeClass
-    public static void setUpBeforeClass(){
-        factory = createEntityManagerFactory("JPA-EDU");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass(){
-        factory.close();
-    }
-
-    @Before
-    public  void setUpBefore(){
-        manager =  factory.createEntityManager();
-    }
-
-    @After
-    public void tearDownAfter(){
-        manager.close();
-    }
+public class ConsultandoRegistroTest extends EntityManagerTest {
 
     @Test
     public void buscarProdutoPorIdentificador(){
